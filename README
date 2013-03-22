@@ -1,0 +1,113 @@
+C# Dynamic Validators - .NET 3.5+
+by Zachary Kniebel
+Copyright (C) 2013
+
+
+# Introduction
+One of the biggest features left out of .NET validators is dynamic 
+functionality. Web developers often want to disable specific validators 
+based on certain conditions, such as when a particular radio button that
+disables an input field is selected. The goal of this project is to help
+others learn to make their own dynamic .NET validators, and to share some
+of the more effective ones, and more job-specific ones that I have 
+created.
+
+If you are reading this, then I am going to assume that you are well past 
+the "but why would this ever be important if I can just validate on the 
+client-side" question. What you may be asking, however, is "if this is so
+important and/or useful, why didn't Microsoft add it in, themselves?" To 
+be honest, I really do not know why they chose to omit it. What I do know
+is that Microsoft wrote their validators to be very extensible, so that 
+developers would be able to tailor them to their specific needs. Microsoft
+did not add many validators to the library for this very reason, which I 
+imagine is also why it is so easy to extend Microsoft's BaseValidator 
+class.
+
+# Features
+  - PowerPoint
+    - Description of included validators
+	- Overview of concepts
+	- Important points/notes about dynamic validators
+	- Instructions on creating dynamic validators 
+	  - From scratch 
+	  - From built-in validators
+  - Three validators based on built-in validators with added dynamic 
+    support
+    - DynamicCompareValidator
+	- DynamicRegularExpressionValidator
+	- DynamicRequiredFieldValidator
+  - Two original dynamic validators, designed for re-use
+    - DateTimeCompareValidator (significantly more robust than 
+	  CompareValidator)
+	- EmailAddressValidator
+  - Base validadot based on the built-in BaseValidator and used for the 
+    creation of new dynamic validators
+	- BaseDynamicValidator
+  - Three job-specific validators, not optimized and included more for
+	reference than anything else
+	- RequiredSubsetOfFieldsValidator
+	- RequiredSubsetSelectedValidator
+	- ValueCheckedOnceValidator
+
+# Detailed Description of Project Includes
+I have included the initial versions of all of nine dynamic validators 
+that I have written for various projects. Not all of the validators 
+included in this project have been revised or optimized, and some things 
+were simply design decisions that you may want to change. For example, 
+when designing the validators, a question was posed, asking if the 
+validator be disbaled if it was not explicitely set to be dynamically 
+enabled. Conceptually speaking, the question was broken down to asking if 
+the validator should be thought of as dynamic validator or a validator 
+that has dynamic support? I went with the latter, for sake of ease, but 
+you may choose to do the opposite. 
+
+Four of the validators included in this project are extensions of the
+built-in validators, to which I have added dynamic support. Even if you
+decide not to use them, they will be a helpful reference, as they will 
+show you how to take any built-in validator and make it dynamic. Note that 
+any validator that has the word "Dynamic" in its name inherits one of the
+built-in validators. This includes the BaseDynamicValidator, which is used
+when creating new validators that are not based on built-in ones, but 
+cannot be used as a stand-alone validator.
+
+You will also get two brand new, original validators, designed for re-use.
+These two validators were not tailored to a specific project, and one, the 
+EmailAddressValidator, has been optimized for speed and accuracy (it uses 
+the built-in MailAddress class, thus the technique it uses for validating 
+email addresses makes it one of the most accurate validators out there), 
+and the other, the DateTimeCompareValidator, is designed for robustness 
+and versatility. These validators and the three (excluding the 
+BaseDynamicValidator) that were created based on the built-in validators
+will likely be the most useful to you.
+
+I have also included three less abstract validators that were specifically
+tailored to a particular project that I was working on, but should still
+be helpful. Note that these validators are likely to be far less 
+optimized, even for the task that they are doing, as they were likely 
+written rather quickly, for internal projects, and not designed to be 
+rapidly extensible. I included these validators more for reference, than 
+anything else.
+
+Lastly, I have also included a PowerPoint from a presentation that I gave
+to my team on dynamic validators. Note that while the PowerPoint does have
+a "Coming Soon" page, I have not had time to work on these features, and I
+am not sure if I will be updating them anytime soon. However, the 
+remainder of the PowerPoint details how and why to use dynamic validators,
+what important things you should remember about them, some of the concepts
+involved in making them, descriptions of the included validators, and, 
+most importantly, how to create your own based on the built-in validators
+or from scratch. 
+
+# Important Note
+None of the included custom validators include client-side validation 
+support. If you wish to add this support, you will have to read up on how
+you can "register" client-side validation scripts in .NET. The only reason
+why I did not do this is because of time constraints. However, the 
+included validators that are based on built-in validators have the client-
+side script support, as they inherit from the built-in ones directly.
+
+
+--------------------------------------------------------------------------
+
+This software is protected under the Open Source GPL v3.0 license 
+(http://opensource.org/licenses/GPL-3.0).
