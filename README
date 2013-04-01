@@ -107,7 +107,3 @@ included validators that are based on built-in validators have the client-
 side script support, as they inherit from the built-in ones directly.
 
 
---------------------------------------------------------------------------
-
-This software is protected under the Open Source GPL v3.0 license 
-(http://opensource.org/licenses/GPL-3.0).
